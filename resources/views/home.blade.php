@@ -21,7 +21,7 @@
     {{-- Services Section --}}
     <section class="container mt-4 max-w-7xl">
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 justify">
-            <a href="">
+            <a href="/complaints">
                 <div class="container mx-auto flex-col bg-purple-300 text-center rounded-3xl aspect-square flex items-center justify-center bg-cover bg-center" style="background-image: url('/img/konsul.jpg')">
                     
                     <h3 class="text-xl font-semibold text-white">Pengaduan</h3>

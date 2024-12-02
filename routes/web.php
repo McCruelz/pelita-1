@@ -54,7 +54,7 @@ Route::get('/about', function () {
 
 Route::prefix('complaints')->middleware('auth')->group(function () {
     Route::get('/create', [ComplaintController::class, 'create'])->name('complaints.create');
-    // Route::post('/', [ComplaintController::class, 'store'])->name('complaints.store');
+    Route::post('/', [ComplaintController::class, 'store'])->name('complaints.store');
     Route::get('/', [ComplaintController::class, 'index'])->name('complaints.index');
     Route::get('/{complaint}', [ComplaintController::class, 'show'])->name('complaints.show');
 });
