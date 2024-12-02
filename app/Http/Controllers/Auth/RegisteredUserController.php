@@ -62,7 +62,7 @@ class RegisteredUserController extends Controller
             // Tangkap error dan tampilkan pesan error
             return redirect()->route('register')
                              ->withErrors(['registration' => 'Terjadi kesalahan saat mendaftar. Silakan coba lagi.'])
-                             ->withInput(); // Redirect kembali ke halaman pendaftaran dengan error
+                             ->withInput(); 
         }
     }
     

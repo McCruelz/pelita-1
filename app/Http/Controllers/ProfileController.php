@@ -26,33 +26,42 @@ class ProfileController extends Controller
      */
     public function update(ProfileUpdateRequest $request): RedirectResponse
     {
-        $user = $request->user();
-        $validated = $request->validated();
-
-        // Handle file upload for profile image
-        if ($request->hasFile('profile_image')) {
-
-            if ($user->profile_image) {
-                Storage::disk('public')->delete($user->profile_image);
+        try {
+            $user = $request->user();
+            $validated = $request->validated();
+    
+            // Handle file upload for profile image
+            if ($request->hasFile('profile_image')) {
+                if ($user->profile_image) {
+                    // Delete old profile image if it exists
+                    Storage::disk('public')->delete($user->profile_image);
+                }
+    
+                // Save new profile image
+                $path = $request->file('profile_image')->store('profile_images', 'public');
+                $validated['profile_image'] = $path; // Save the path to the database
             }
-
-            // Simpan gambar baru
-            $path = $request->file('profile_image')->store('profile_images', 'public');
-            
-            $validated['profile_image'] = $path; // Simpan path ke database
+    
+            // Save other user data
+            $user->fill($validated);
+    
+            // Check if email is updated
+            if ($user->isDirty('email')) {
+                $user->email_verified_at = null; // Reset email_verified_at if email is changed
+            }
+    
+            // Save the updated user data
+            $user->save();
+    
+            // Return success response with status
+            return Redirect::route('profile.edit')->with('status', 'profile-updated');
+        } catch (\Exception $e) {
+    
+            // Redirect back to the profile edit page with an error message
+            return Redirect::route('profile.edit')->with('error', 'Failed to update profile. Please try again.');
         }
-
-        // Simpan data lain
-        $user->fill($validated);
-
-        if ($user->isDirty('email')) {
-            $user->email_verified_at = null; // Reset email_verified_at jika email diubah
-        }
-
-        $user->save();
-
-        return Redirect::route('profile.edit')->with('status', 'profile-updated');
     }
+    
 
     /**
      * Delete the user's account.
