@@ -75,30 +75,30 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
                     <div class="text-center">
                         <div class="">
-                            <img src="/img/ghaniya.jpg" alt="Ghaniya" class="w-24 h-24 mx-auto mb-4 rounded-full flex items-start justify-center">
+                            <img src="/img/ghaniya.jpg" alt="Ghaniya" class="w-24 h-24 mx-auto mb-4 rounded-full object-cover">
                         </div>
                         <p class="font-semibold text-xl text-gray-800">Ghaniya Putri</p>
                         <p class="text-gray-600">CEO & Pendiri</p>
                     </div>
                     <div class="text-center">
                         <div>
-                            <img src="/img/nanad.jpg" alt="Nadya Charrisa" class="w-24 h-24 mx-auto mb-4 rounded-full flex items-start justify-center">
+                            <img src="/img/nanad.jpg" alt="Nadya Charrisa" class="w-24 h-24 mx-auto mb-4 rounded-full object-cover">
                         </div>
                         <p class="font-semibold text-xl text-gray-800">Nadya Charrisa</p>
                         <p class="text-gray-600">Ahli Hukum & Penasihat Hukum</p>
                     </div>
                     <div class="text-center">
                         <div class="w-24 h-24 mx-auto mb-4 bg-gray-100 rounded-full flex items-start justify-center">
-                            <img src="https://via.placeholder.com/100" alt="Maria Johnson" class="rounded-full">
+                            <img src="/img/zuher.jpg" alt="Maria Johnson" class="w-24 h-24 mx-auto mb-4 rounded-full object-cover">
                         </div>
-                        <p class="font-semibold text-xl text-gray-800">Maria Johnson</p>
+                        <p class="font-semibold text-xl text-gray-800">Zuhair Hafizh</p>
                         <p class="text-gray-600">Psikolog & Penasihat Korban</p>
                     </div>
                     <div class="text-center">
                         <div class="w-24 h-24 mx-auto mb-4 bg-gray-100 rounded-full flex items-start justify-center">
-                            <img src="https://via.placeholder.com/100" alt="Mark Williams" class="rounded-full">
+                            <img src="/img/bram.jpg" alt="Mark Williams" class="w-24 h-24 mx-auto mb-4 rounded-full object-cover">
                         </div>
-                        <p class="font-semibold text-xl text-gray-800">Mark Williams</p>
+                        <p class="font-semibold text-xl text-gray-800">Bram Oktavian</p>
                         <p class="text-gray-600">CTO & Pengembang Sistem</p>
                     </div>
                     

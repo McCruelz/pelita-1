@@ -1,5 +1,4 @@
-<x-layout>
-    <x-slot:title> {{$title}} </x-slot:title>
+<x-layout title="Artikel - {{ ucwords($post['title']) }}">
     <article class="py-8 max-w-screen-md border-b">
 
         <a href="{{route ('articles')}}" class="font-medium text-white">

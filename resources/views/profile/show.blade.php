@@ -1,10 +1,15 @@
-<x-layout title="profil">
-        <div class="mx-5 bg-gradient-to-r from-yellow-100 via-pink-300 to-purple-400 rounded-2xl p-6 flex space-x-5 items-center">
-            <div class="">
+<x-layout title="Profil - {{ $user->name }}">
+        <div class=" max-h-44 bg-gradient-to-r from-yellow-100 via-pink-300 to-purple-400 rounded-2xl p-6 flex items-center justify-between">
+            <div class="ml-10">
                 <h1 class="text-3xl font-bold text-gray-800">Hey, {{ $user->name }}!</h1>
                 <p class="text-lg text-gray-600 mt-2">Sudah tersenyumkah hari ini?</p>
             </div>
+        
+            <div class="">
+                <img src="/img/tos.png" alt="Image" class="max-h-56 mb-12">
+            </div>
         </div>
+    
         
         <div class="mt-6 mb-6">
             <h1 class="text-6xl font-bold">User Profile</h1>
@@ -92,6 +97,4 @@
                 </div>
             </form>
         </x-modal>
-
-        @include('complaints.index')
 </x-layout> 

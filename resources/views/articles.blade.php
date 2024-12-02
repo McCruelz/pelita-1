@@ -44,7 +44,9 @@
                         style="background-image: url('{{ $post->image ? asset('storage/' . $post->image) : asset('default-image.jpg') }}')">
                         
                         {{-- Overlay untuk gradient gelap --}}
-                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent bg-opacity-50 rounded-2xl"></div>
+                        <a href="/article/{{$post->slug}}">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent bg-opacity-50 rounded-2xl"></div>
+                        </a>
                         
                         {{-- Konten Artikel --}}
                         <div class="relative z-10">

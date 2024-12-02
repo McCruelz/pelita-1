@@ -40,7 +40,7 @@ Route::prefix('admin/posts')->middleware('auth:admin')->group(function () {
 
 
 Route::get('/article/{post:slug}', function (Post $post) {
-    return view('post', ['title'=> 'Single Post', 'post' => $post]);
+    return view('post', ['post' => $post]);
 });
 
 Route::get('/authors/{user}', function (User $user) {
