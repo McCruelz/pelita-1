@@ -14,14 +14,14 @@
                 <h3 class="text-xl font-semibold text-gray-700">Status:</h3>
                 <form action="{{ route('admin.complaints.update', $complaint->id_laporan) }}" method="POST" class="mt-2">
                     @csrf
-                    @method('PATCH')
+                    @method('PATCH') <!-- Pastikan ini digunakan untuk PATCH request -->
                     <select name="status_laporan" id="status_laporan" class="block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                        <option value="pending" {{ old('status_laporan', $complaint->status_laporan) === 'pending' ? 'selected' : '' }}>Pending</option>
-                        <option value="proses" {{ old('status_laporan', $complaint->status_laporan) === 'proses' ? 'selected' : '' }}>Proses</option>
-                        <option value="selesai" {{ old('status_laporan', $complaint->status_laporan) === 'selesai' ? 'selected' : '' }}>Selesai</option>
+                        <option value="pending" {{ $complaint->status_laporan === 'pending' ? 'selected' : '' }}>Pending</option>
+                        <option value="proses" {{ $complaint->status_laporan === 'proses' ? 'selected' : '' }}>Proses</option>
+                        <option value="selesai" {{ $complaint->status_laporan === 'selesai' ? 'selected' : '' }}>Selesai</option>
                     </select>
                     <button type="submit" class="mt-4 w-full bg-blue-600 text-white font-semibold py-2 rounded-md hover:bg-blue-700 transition duration-200">Update Status</button>
-                </form>
+                </form>                
             </div>
             
             <!-- Bukti Laporan (Jika ada) -->

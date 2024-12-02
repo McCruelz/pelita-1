@@ -66,13 +66,11 @@ class ComplaintController extends Controller
     // Admin melihat deskripsi laporan
     public function adminShow(Complaint $complaint)
     {
-        Log::info('Complaint ID: ' . $complaint->id_laporan);
         return view('admin.complaints.show', compact('complaint'));
     }
 
     public function update(Request $request, Complaint $complaint)
     {
-
         $request->validate([
             'status_laporan' => 'required|in:pending,proses,selesai',
         ]);
@@ -84,6 +82,7 @@ class ComplaintController extends Controller
         return redirect()->route('admin.complaints.show', $complaint->id_laporan)
                          ->with('success', 'Status pengaduan berhasil diperbarui!');
     }
+    
 
     
 }
