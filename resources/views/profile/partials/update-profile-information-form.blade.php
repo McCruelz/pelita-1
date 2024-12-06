@@ -34,6 +34,8 @@
                         <button type="submit" class="bg-green-500 text-white rounded-full px-4 py-2 w-full">
                             Konfirmasi
                         </button>
+
+
                 
                     <!-- Delete Profile Picture -->
                     <button 
@@ -158,6 +160,11 @@
             <x-input-error class="mt-2" :messages="$errors->get('email')" />
             <x-input-error class="mt-2" :messages="$errors->get('gender')" />
             <x-input-error class="mt-2" :messages="$errors->get('username')" />
+            @if (session('status'))
+            <div class="bg-green-500 text-white p-4 rounded-md mb-4">
+                Perubahan Tersimpan
+            </div>
+            @endif
         </div>
     </form>
 

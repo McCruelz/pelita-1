@@ -29,7 +29,6 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
-        try {
             // Validasi input
             $request->validate([
                 'name' => ['required', 'string', 'max:255', 'regex:/^[a-zA-Z]+$/'],
@@ -56,14 +55,8 @@ class RegisteredUserController extends Controller
     
             Auth::login($user);
     
-            return redirect(route('home', absolute: false));
+            return redirect()->route('home');
     
-        } catch (\Exception $e) {
-            // Tangkap error dan tampilkan pesan error
-            return redirect()->route('register')
-                             ->withErrors(['registration' => 'Terjadi kesalahan saat mendaftar. Silakan coba lagi.'])
-                             ->withInput(); 
-        }
     }
     
 }
